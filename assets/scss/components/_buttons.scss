@@ -1,0 +1,27 @@
+@use "../abstracts/variables";
+
+.btn-blue {
+  background-color: variables.$color-primary;
+  color: #fff;
+  border-radius: 0;
+  border-color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 500;
+
+  &:hover {
+    background-color: darken(variables.$color-primary, 4);
+    color: #fff;
+  }
+}
+
+.btn-white {
+  @extend .btn-blue;
+  background-color: #fff;
+  color: variables.$color-primary;
+
+  &:hover {
+    background-color: darken(variables.$color-primary, 4);
+    color: #fff;
+  }
+}

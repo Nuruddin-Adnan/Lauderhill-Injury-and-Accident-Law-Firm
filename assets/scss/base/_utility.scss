@@ -1,0 +1,15 @@
+@use "../abstracts/variables";
+
+.color-primary {
+  color: variables.$color-primary;
+}
+.text-global-primary {
+  color: variables.$color-text-primary;
+}
+.text-global-secondary {
+  color: variables.$color-text-secondary;
+}
+
+.font-medium {
+  font-weight: 500;
+}

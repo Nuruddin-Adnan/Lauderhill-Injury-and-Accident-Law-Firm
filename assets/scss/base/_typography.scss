@@ -1,0 +1,24 @@
+@use "../abstracts/variables";
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: variables.$color-text-primary;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", sans-serif;
+  color: variables.$color-text-primary;
+}
+
+p {
+  font-family: "Roboto", sans-serif;
+  color: variables.$color-text-secondary;
+}
+
+// font-family: 'Poppins', sans-serif;
+// font-family: 'Roboto', sans-serif;

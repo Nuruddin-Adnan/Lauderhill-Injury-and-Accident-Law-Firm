@@ -1,0 +1,358 @@
+@use "../abstracts/variables";
+
+.home {
+  &.header {
+    background: url(../images/home-page/hero-bg.jpg) no-repeat center
+      center/cover;
+    padding-bottom: 80px;
+
+    .banner {
+      .text {
+        .animate-top-to-bottom {
+          position: absolute;
+          top: -65px;
+          left: -65px;
+          width: 130px;
+          height: 130px;
+        }
+
+        .sub-title {
+          color: variables.$color-primary;
+          position: relative;
+          padding-left: 30px;
+          font-weight: 500;
+
+          &::before {
+            content: "";
+            width: 20px;
+            height: 2px;
+            background-color: variables.$color-primary;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+        }
+
+        h1 {
+          font-size: 35px;
+          font-weight: 700;
+          margin: 30px 0 40px 0;
+
+          @media (min-width: 1200px) {
+            font-size: 45px;
+          }
+          @media (min-width: 1400px) {
+            font-size: 55px;
+          }
+        }
+      }
+    }
+
+    /*====================
+  ** Feature Box
+  =====================*/
+    .feature-box {
+      .icon {
+        width: 65px;
+        height: 65px;
+        padding: 15px;
+        position: relative;
+        display: grid;
+        place-items: center;
+
+        svg {
+          position: relative;
+          z-index: 1;
+
+          fill: #004084;
+        }
+      }
+
+      .icon::after,
+      .icon::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        -webkit-transition: 0.3s;
+        -o-transition: 0.3s;
+        transition: 0.3s;
+        // z-index: -1;
+      }
+
+      .icon::before {
+        background-image: url(../images/icon/feature-icon-bg.png);
+      }
+
+      .icon::after {
+        background-image: url(../images/icon/feature-icon-hover-bg.png);
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      .text {
+        margin-left: 10px;
+        .title {
+          font-weight: 600;
+          color: variables.$color-text-primary;
+          font-size: 22px;
+          margin-bottom: 10px;
+        }
+
+        .description-text {
+          font-size: 14px;
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-line-clamp: 3; /* number of lines to show */
+          line-clamp: 3;
+          -webkit-box-orient: vertical;
+        }
+      }
+
+      &:hover {
+        background-color: variables.$color-primary;
+        background-image: url(../images/home-page/feature-box.png);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        .text {
+          .title,
+          .description-text {
+            color: #fff;
+          }
+        }
+      }
+
+      &:hover .icon::before {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      &:hover .icon::after {
+        opacity: 0.3;
+        visibility: visible;
+      }
+
+      &:hover svg {
+        .st0 {
+          fill: #fff;
+        }
+      }
+    }
+  }
+}
+
+.home-content {
+  .about {
+    background-color: variables.$color-primary;
+    background: variables.$color-primary
+      url(../images/home-page/about-section-bg.png) no-repeat center
+      center/contain;
+    padding: 80px 0;
+
+    .text {
+      position: relative;
+      z-index: 1;
+
+      .about-ellipse {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        width: 130px;
+        height: 130px;
+        z-index: -1;
+        opacity: 0.1;
+      }
+
+      .panal {
+        background-color: #fff;
+        border-left: 2px solid #d3d04f;
+        padding: 20px;
+      }
+    }
+  }
+
+  // practice-area start
+  .practice-area {
+    padding: 80px 0;
+
+    .practice-box {
+      border-radius: 15px;
+      background-color: #f7f7f9;
+      transition: all 0.2s linear;
+
+      &:hover {
+        background: variables.$color-primary
+          url(../images/home-page/practice-area-bg.png) no-repeat center
+          center/cover;
+      }
+
+      .icon {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin: auto;
+        background-color: #fff;
+        text-align: center;
+        display: grid;
+        place-items: center;
+        margin-bottom: 20px;
+
+        svg {
+          width: 60%;
+          height: 60%;
+        }
+      }
+
+      .text-card {
+        background-color: #fff;
+        border-radius: 10px;
+
+        .title {
+          font-size: 22px;
+          font-weight: 600;
+          color: variables.$color-text-primary;
+          margin: 0 0 20px 0;
+        }
+
+        .description-text {
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-line-clamp: 4; /* number of lines to show */
+          line-clamp: 4;
+          -webkit-box-orient: vertical;
+        }
+
+        .more-btn {
+          font-weight: 500;
+          color: variables.$color-text-primary;
+          &:hover {
+            color: variables.$color-primary;
+          }
+
+          i {
+            transition: all 0.2s linear;
+          }
+          &:hover {
+            i {
+              transform: translateX(10px);
+            }
+          }
+        }
+      }
+    }
+  }
+  //End of practice-area
+
+  // faq section start
+  .faq {
+    padding: 80px 0;
+
+    .accordion-button {
+      font-weight: 700;
+      font-size: 16px;
+      color: variables.$color-text-primary;
+    }
+
+    .accordion-button:not(.collapsed) {
+      background-color: #fff;
+      box-shadow: none;
+    }
+
+    .accordion-button::after {
+      background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+      transform: scale(0.7) !important;
+    }
+    .accordion-button:not(.collapsed)::after {
+      background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' d='M0 8a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1z' clip-rule='evenodd'/%3e%3c/svg%3e");
+    }
+
+    .accordion-body {
+      p {
+        border-left: 2px solid variables.$color-primary;
+        padding-left: 20px;
+      }
+    }
+  }
+  //End of faq
+
+  // contact-us start
+  .contact-us {
+    background: url(../images/home-page/gradient-bg.jpg) no-repeat center
+      center/cover;
+    padding: 80px 0;
+
+    .animate-top-to-bottom {
+      position: absolute;
+      top: -65px;
+      left: -65px;
+      width: 130px;
+      height: 130px;
+    }
+
+    .form-control {
+      border: 0;
+      border-bottom: 1px solid #dee2e6;
+      border-radius: 0;
+
+      &::placeholder {
+        font-size: 16px;
+        color: #b2b2b2;
+      }
+
+      &:focus {
+        box-shadow: none;
+        border-color: variables.$color-text-secondary;
+      }
+    }
+  }
+  // End of contact-us
+  // blog section start
+  .blog {
+    padding: 80px 0;
+
+    .blog-img {
+      img {
+        transition: all 0.2s linear;
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+
+    .blog-title {
+      font-size: 20px;
+      font-weight: 600;
+      color: variables.$color-text-primary;
+      margin: 20px 0;
+
+      &:hover {
+        color: variables.$color-primary;
+      }
+    }
+
+    .more-btn {
+      font-weight: 500;
+      color: variables.$color-text-primary;
+      &:hover {
+        color: variables.$color-primary;
+      }
+
+      i {
+        transition: all 0.2s linear;
+      }
+      &:hover {
+        i {
+          transform: translateX(10px);
+        }
+      }
+    }
+  }
+  //End of blog section
+}
