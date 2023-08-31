@@ -180,7 +180,7 @@
 
   // practice-area start
   .practice-area {
-    padding: 80px 0;
+    padding: 80px 0 150px 0;
 
     .practice-box {
       border-radius: 15px;
@@ -249,6 +249,109 @@
     }
   }
   //End of practice-area
+
+  // testimonial section start
+  .testimonial {
+    padding: 80px 0 40px 0;
+    background: url(../images/home-page/testimonial-bg.jpg) no-repeat center
+      center/cover;
+    position: relative;
+    z-index: 2;
+
+    &::before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    .contact-now {
+      background: variables.$color-primary
+        url(../images//home-page/about-section-bg.png) no-repeat center
+        center/cover;
+
+      .btn-blue {
+        border-color: #b2b2b2;
+      }
+    }
+
+    .swiper-slide {
+      padding-bottom: 60px;
+    }
+
+    .swiper-pagination-bullet {
+      width: 10px;
+      height: 7px;
+      border-radius: 0;
+      background-color: white;
+    }
+
+    .swiper-pagination-bullet-active {
+      transition: all 0.1s linear;
+      background-color: white;
+      width: 15px;
+    }
+
+    .testimonial-card {
+      .line {
+        .icon-box {
+          position: absolute;
+          top: 50%;
+          right: 15%;
+          transform: translateY(-50%);
+          .icon {
+            width: 40px;
+            height: 40px;
+            position: relative;
+            // quotes: "\201C""\201D""\2018""\2019";
+            quotes: "“" "”" "“" "”";
+            font-family: serif;
+            color: variables.$color-primary;
+
+            &::before {
+              content: open-quote;
+              font-size: 40px;
+              line-height: 1.25;
+              width: 100%;
+              height: 100%;
+              text-align: center;
+              font-weight: 700;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%) rotate(180deg);
+              z-index: 1;
+            }
+          }
+        }
+      }
+
+      .user-info {
+        .avatar {
+          .avatar-img {
+            width: 40px;
+            height: 40px;
+            display: block;
+            border-radius: 50%;
+          }
+        }
+
+        .user-name {
+          font-weight: 500;
+          font-size: 16px;
+        }
+
+        .user-designation {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  // End of testimonial section
 
   // faq section start
   .faq {
